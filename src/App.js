@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import fetch from './FakeFetch'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const getBlogPosts = async () => {
+  const response = await fetch('blogPosts.json')
+  const blogPosts = await response.json()
+
+  return blogPosts
 }
 
-export default App;
+const App = () => {
+  return (
+    <div>
+      <h1>Hello!</h1>
+      <p>This doesn't look much like anything. Yet!</p>
+    </div>
+  )
+}
+
+export default App
