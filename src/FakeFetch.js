@@ -1,7 +1,7 @@
 const fetch = async () => {
   return {
     json: async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5000))
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       return {
         blogPosts: [
           {
